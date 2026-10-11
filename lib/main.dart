@@ -22,12 +22,75 @@ class MyApp extends StatelessWidget {
           padding: EdgeInsets.all(
             16.0,
           ), //memberikn padding dikit 
-          child: FontTextWidget(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FontTextWidget(),
+              SizedBox(height: 40,), //untu pembatas
+
+              DecorationTextWidget(),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
+class DecorationTextWidget extends StatelessWidget {
+  const DecorationTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Underline',
+          style: TextStyle(
+            fontSize: 20,
+            decoration: TextDecoration.underline,
+          ),
+        ),
+
+        SizedBox(height: 15,),
+
+        Text(
+          'Line Through',
+          style: TextStyle(
+            fontSize: 20,
+            decoration: TextDecoration.lineThrough,
+          ),
+        ),
+
+        SizedBox(height: 15,),
+
+        Text(
+          'Background',
+          style: TextStyle(
+            fontSize: 20,
+            backgroundColor: Colors.blue,
+          ),
+        ),
+
+        Text(
+          'Text Shadow',
+          style: TextStyle(
+            fontSize: 30,
+            shadows: [
+              Shadow(
+                offset: Offset(3,3),
+                blurRadius: 5,
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+    
+  }
+}
+
 
 class FontTextWidget extends StatelessWidget {
   const FontTextWidget({super.key});
