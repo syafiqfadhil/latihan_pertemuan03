@@ -29,9 +29,53 @@ class MyApp extends StatelessWidget {
               SizedBox(height: 40,), //untu pembatas
 
               DecorationTextWidget(),
+              SizedBox(height: 40),
+              
+              AlignmentTextWidget(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AlignmentTextWidget extends StatelessWidget{
+  const AlignmentTextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        border: Border.all(),
+      ),
+
+      child: const Column(
+        children: [
+          Text(
+            'Kiri',
+            textAlign: TextAlign.left,
+          ),
+
+          Text(
+            'Tengah',
+            textAlign: TextAlign.center,
+          ),
+
+          Text(
+            'Right',
+            textAlign: TextAlign.right,
+          ),
+
+          Text(
+            'Justify: Flutter adalah framework'
+            'untuk membuat aplikasi menggunakan'
+            'satu codebase',
+            textAlign: TextAlign.justify,
+          ),
+        ],
       ),
     );
   }
